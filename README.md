@@ -1,5 +1,5 @@
-# raytracer
-very simple raytracer written in C, outputs .ppm files
+# 3D Renderer
+very simple 3D Renderer written in C, outputs .ppm files
 
 
 how to build using ninja:
