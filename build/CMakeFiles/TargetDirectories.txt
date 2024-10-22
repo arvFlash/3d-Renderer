@@ -1,0 +1,3 @@
+/home/arv/programming/C/graphics/ppmtest/build/CMakeFiles/ppm.dir
+/home/arv/programming/C/graphics/ppmtest/build/CMakeFiles/edit_cache.dir
+/home/arv/programming/C/graphics/ppmtest/build/CMakeFiles/rebuild_cache.dir
