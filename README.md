@@ -10,5 +10,5 @@ ninja
 ```
 then execute with:
 ```
-./ppm > image.ppm
+./ppm
 ```
