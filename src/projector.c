@@ -32,3 +32,7 @@ void project(double x, double y, double z, double focalLength, double** projecte
     //printf("Projected X: %lf, Projected Y: %lf\n", projectedX, projectedY);
 
 }
+
+void edge(double **projected, int a, int b) {
+
+}

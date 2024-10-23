@@ -1,1 +1,1 @@
-void generate(int imageHeigth, int imageWidth, unsigned char ***array);
+void generate(int imageWidth, int imageHeigth, unsigned char ***array);
