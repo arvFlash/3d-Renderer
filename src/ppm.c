@@ -18,5 +18,6 @@ void generate(int imageWidth, int imageHeigth, unsigned char ***array)
                                        array[j][i][2]);
         }
     }
+    fclose(file);
     return;
 }
