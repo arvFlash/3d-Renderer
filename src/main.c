@@ -6,7 +6,7 @@
 int main()
 {
     double focalLength = 350;
-    const int width = 1000, heigth = 1000;
+    const int width = 150, heigth = 150;
     unsigned char ***array = malloc(width * sizeof(char **));
 
     for(int i = 0; i < width; i++) {
@@ -50,7 +50,7 @@ int main()
             array[(int)projected[0][i] + (width / 2)][(int)projected[1][i] + (heigth / 2)][0] = 255;
             array[(int)projected[0][i] + (width / 2)][(int)projected[1][i] + (heigth / 2)][1] = 255;
             array[(int)projected[0][i] + (width / 2)][(int)projected[1][i] + (heigth / 2)][2] = 255;
-            //printf("%d %f %f\n", i, projected[0][i], projected[1][i]);
+            printf("%d %d %d\n", i, (int)projected[0][i] + (width / 2), (int)projected[1][i] + (heigth / 2));
 
         }
     }

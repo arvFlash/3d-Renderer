@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void project(double x, double y, double z, double focalLength, double** projected, int i) {
-    double zoom = 1;
+    double zoom = .1;
     double movx = 0;
     double movy = 0;
     double movz = -100;
