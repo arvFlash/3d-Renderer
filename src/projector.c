@@ -33,7 +33,68 @@ void project(double x, double y, double z, double focalLength, double** projecte
 
 }
 
+void linelow(int x1, int y1, int x2, int y2, unsigned char ***array) {
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+    int yi = 1;
+    if(dy < 0) {
+        yi = -1;
+        dy = 0 - dy;
+    }
+    int D = (2 * dy) - dx;
+    int y = y1;
+
+    for(int x = x1; x <= x2; x++) {
+        //printf("1 x: %d , y: %d\n", x, y);
+        array[x][y][0] = 255;
+        array[x][y][1] = 255;
+        array[x][y][2] = 255;
+        if(D > 0) {
+            y = y + yi;
+            D = D + (2 * (dy - dx));
+        } else {
+            D = D + 2 * dy;
+        }
+    }
+}
+
+void linehigh(int x1, int x2, int y1, int y2, unsigned char ***array) {
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+    int xi = 1;
+    if(dx < 0) {
+        xi = -1;
+        dx = 0 - dx;
+    }
+    int D = (2 * dx) - dy;
+    int x = x1;
+
+    for(int y = y1; y <= y2; y++) {
+        //printf("2 x: %d , y: %d\n", x, y);
+        array[x][y][0] = 255;
+        array[x][y][1] = 255;
+        array[x][y][2] = 255;
+        if(D > 0) {
+            x = x + xi;
+            D = D + (2 * (dx - dy));
+        } else {
+            D = D + 2 * dx;
+        }
+    }
+}
+
 void line(int x1, int y1, int x2, int y2, unsigned char ***array)
 {
+    if(abs(y2 - y1) < abs(x2 - x1)) {
+        if(x1 > x2)
+            linelow(x2, y2, x1, y1, array);
+        else
+            linelow(x1, y1, x2, y2, array);
 
+    } else {
+        if(y1 > y2)
+            linehigh(x2, y2, x1, y1, array);
+        else
+            linehigh(x1, y1, x2, y2, array);
+    }
 }

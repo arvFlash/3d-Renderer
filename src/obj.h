@@ -1,1 +1,1 @@
-int projectobj(double focalLength, double **projected);
+int projectobj(double focalLength, double **projected, int **edges);
