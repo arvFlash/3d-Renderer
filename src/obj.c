@@ -23,12 +23,12 @@ int projectobj(double focalLength, double **projected) {
             fscanf(obj, "%lf", &y);
             fscanf(obj, "%lf", &z);
             project(x, y, z, focalLength, projected, verts);
-            printf("%lf %lf %lf\n", x, y, z);
+            //printf("%lf %lf %lf\n", x, y, z);
             verts++;
         } else {
             text = fgetc(obj);
             if(text != 'v' && text != '\n' && text != ' ') {
-                printf("%c\n", text);
+                //printf("%c\n", text);
                 break;
             }
         }

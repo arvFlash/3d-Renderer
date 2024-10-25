@@ -12,11 +12,7 @@ void generate(int imageWidth, int imageHeigth, unsigned char ***array)
             fprintf(file, "%d %d %d\n",array[i][j][0],
                                        array[i][j][1],
                                        array[i][j][2]);
-            if(array[i][j][0] == 255) {
-                printf("%d %d %d x= %d  y= %d\n",array[i][j][0],
-                                           array[i][j][1],
-                                           array[i][j][2], j, i);
-            }
+
         }
     }
     fclose(file);
