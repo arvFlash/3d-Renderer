@@ -1,10 +1,6 @@
 #include <stdio.h>
 
-void line(int x, int y, unsigned char ***array)
-{
 
-
-}
 
 void generate(int imageWidth, int imageHeigth, unsigned char ***array)
 {

@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void project(double x, double y, double z, double focalLength, double** projected, int i) {
-    double zoom = .1;
+    double zoom = 10;
     double movx = 0;
     double movy = 0;
     double movz = -100;
@@ -33,6 +33,7 @@ void project(double x, double y, double z, double focalLength, double** projecte
 
 }
 
-void edge(double **projected, int a, int b) {
+void line(int x1, int y1, int x2, int y2, unsigned char ***array)
+{
 
 }

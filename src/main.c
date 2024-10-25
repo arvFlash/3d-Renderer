@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "projector.h"
-
+#include "obj.h"
 int main()
 {
     double focalLength = 350;
-    const int width = 1500, heigth = 150;
+    const int width = 150, heigth = 150;
     unsigned char ***array = malloc(width * sizeof(char **));
 
     for(int i = 0; i < width; i++) {
@@ -24,9 +24,9 @@ int main()
     projected[0] = malloc(1 * sizeof(double));
     projected[1] = malloc(1 * sizeof(double));
     int verts = 0;
+    verts = projectobj(focalLength, projected);
 
-
-
+    /*
     project( 50,  50,  50, focalLength, projected, 0);
     verts++;
     project( 50, -50,  50, focalLength, projected, 1);
@@ -43,7 +43,7 @@ int main()
     verts++;
     project(-50,  50, -50, focalLength, projected, 7);
     verts++;
-
+    */
 
     for(int i = 0; i < verts; i++) {
         if (projected[0][i] + (int)(width / 2) <= width - 1 && projected[1][i] + (int)(heigth / 2) <= heigth - 1 && projected[0][i] + (int)(width / 2) >= 0 && projected[1][i] + (int)(heigth / 2) >= 0){
@@ -55,7 +55,7 @@ int main()
         }
     }
 
-
+    line((int)projected[0][1] + (width / 2), (int)projected[1][1] + (heigth / 2),(int)projected[0][2] + (width / 2), (int)projected[1][2] + (heigth / 2), array);
     generate(width, heigth, array);
 
     for (int i = 0; i < width; i++) {
