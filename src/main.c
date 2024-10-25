@@ -26,24 +26,6 @@ int main()
     int verts = 0;
     verts = projectobj(focalLength, projected);
 
-    /*
-    project( 50,  50,  50, focalLength, projected, 0);
-    verts++;
-    project( 50, -50,  50, focalLength, projected, 1);
-    verts++;
-    project(-50, -50,  50, focalLength, projected, 2);
-    verts++;
-    project(-50,  50,  50, focalLength, projected, 3);
-    verts++;
-    project( 50,  50, -50, focalLength, projected, 4);
-    verts++;
-    project( 50, -50, -50, focalLength, projected, 5);
-    verts++;
-    project(-50, -50, -50, focalLength, projected, 6);
-    verts++;
-    project(-50,  50, -50, focalLength, projected, 7);
-    verts++;
-    */
 
     for(int i = 0; i < verts; i++) {
         if (projected[0][i] + (int)(width / 2) <= width - 1 && projected[1][i] + (int)(heigth / 2) <= heigth - 1 && projected[0][i] + (int)(width / 2) >= 0 && projected[1][i] + (int)(heigth / 2) >= 0){
