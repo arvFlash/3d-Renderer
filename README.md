@@ -12,3 +12,7 @@ then execute with:
 ```
 ./ppm
 ```
+
+example image rendered with this:
+![alt text](https://github.com/arvFlash/3d-Renderer/blob/master/example.png?raw=true)
+
