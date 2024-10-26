@@ -42,6 +42,7 @@ int projectobj(double focalLength, double **projected, int **edges) {
 
 void loadedges(int **edges, FILE *file){
     char text;
+    fseek(file, -1, SEEK_CUR);
     while(true) {
         text = fgetc(file);
         if(text == 'l')
@@ -53,8 +54,10 @@ void loadedges(int **edges, FILE *file){
         if(fscanf(file, "%d", &edge) == 1) {
             i++;
             edges[0][i] = edge;
+            //printf("edge 1: %d ", edge);
             fscanf(file, "%d", &edge);
             edges[1][i] = edge;
+            //printf("edge 2: %d i: %d\n", edge, i);
         } else {
             text = fgetc(file);
             if(text != 'l' && text != '\n' && text != ' ') {

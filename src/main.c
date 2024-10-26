@@ -1,6 +1,6 @@
 #include "ppm.h"
 #include <stdlib.h>
-//#include <stdio.h>
+#include <stdio.h>
 #include "projector.h"
 #include "obj.h"
 int main()
@@ -29,23 +29,6 @@ int main()
     projected[1] = malloc(1 * sizeof(double));
 
     int verts = 0;
-    /*
-    project( 50,  50,  50, focalLength, projected, 0);
-    verts++;
-    project( 50, -50,  50, focalLength, projected, 1);
-    verts++;
-    project(-50, -50,  50, focalLength, projected, 2);
-    verts++;
-    project(-50,  50,  50, focalLength, projected, 3);
-    verts++;
-    project( 50,  50, -50, focalLength, projected, 4);
-    verts++;
-    project( 50, -50, -50, focalLength, projected, 5);
-    verts++;
-    project(-50, -50, -50, focalLength, projected, 6);
-    verts++;
-    project(-50,  50, -50, focalLength, projected, 7);
-    verts++;*/
     verts = projectobj(focalLength, projected, edges);
 
 
@@ -58,11 +41,14 @@ int main()
             //printf("array value: %d \n", array[(int)projected[0][i] + (width / 2)][(int)projected[1][i] + (heigth / 2)][0]);
         }
     }
-    line(500, 750, 400, 300, array);
-    /*
+    //line(1103, 1103, 1096, 1096, array);
+
     for(int i = 1; i <= edges[0][0]; i++) {
-        line((int)projected[0][edges[0][i] + 1] + (width / 2), (int)projected[1][edges[0][i] + 1] + (heigth / 2), (int)projected[0][edges[1][i] + 1] + (width / 2), (int)projected[1][edges[1][i] + 1] + (heigth / 2), array);
-        }*/
+        //printf("i: %d\n", i);
+        //printf("edges 0: %d, edges 1: %d\n", edges[0][i], edges[1][i]);
+        //printf("%d, %d, %d, %d\n", (int)projected[0][edges[0][i] - 1] + (width / 2), (int)projected[1][edges[0][i] - 1] + (heigth / 2), (int)projected[0][edges[1][i] - 1] + (width / 2), (int)projected[1][edges[1][i] - 1] + (heigth / 2));
+        line((int)projected[0][edges[0][i] - 1] + (width / 2), (int)projected[1][edges[0][i] - 1] + (heigth / 2), (int)projected[0][edges[1][i] - 1] + (width / 2), (int)projected[1][edges[1][i] - 1] + (heigth / 2), array);
+    }
 
 
     generate(width, heigth, array);
@@ -77,5 +63,8 @@ int main()
     free(projected[0]);
     free(projected[1]);
     free(projected);
+    free(edges[0]);
+    free(edges[1]);
+    free(edges);
     return 0;
 }

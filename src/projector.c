@@ -58,7 +58,7 @@ void linelow(int x1, int y1, int x2, int y2, unsigned char ***array) {
     }
 }
 
-void linehigh(int x1, int x2, int y1, int y2, unsigned char ***array) {
+void linehigh(int x1, int y1, int x2, int y2, unsigned char ***array) {
     int dx = x2 - x1;
     int dy = y2 - y1;
     int xi = 1;
