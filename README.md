@@ -15,4 +15,5 @@ then execute with:
 
 example image rendered with this:
 ![alt text](https://github.com/arvFlash/3d-Renderer/blob/master/example.png?raw=true)
-
+with lines:
+![alt text](https://github.com/arvFlash/3d-Renderer/blob/master/line.png?raw=true)
